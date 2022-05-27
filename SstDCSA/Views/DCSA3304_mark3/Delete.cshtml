@@ -1,0 +1,92 @@
+﻿@model SstDCSA.Models.tbl_DCSA3304_mark3
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="text-center mt-3">Project Works  (DCSA 3304) Mark Details</h2>
+
+<div class="row">
+    <div class="form-horizontal bg-transparent border mt-3" style="max-width:750px;margin:auto;">
+        <div>
+            <h4 class="text-center mt-2 my-2">Are you sure you want to delete this?</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.tbl_student.st_registration)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tbl_student.st_registration)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.tbl_student.st_name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tbl_student.st_name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.subj_code)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.subj_code)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_center_code)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_center_code)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.project_report)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.project_report)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.viva)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.viva)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.submit_date)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.submit_date)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.exam_term)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.exam_term)
+                </dd>
+            </dl>
+        </div>
+
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-danger mt-2 my-2" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</div>

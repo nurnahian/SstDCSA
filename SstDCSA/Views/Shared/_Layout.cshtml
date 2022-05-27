@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>@ViewBag.Title -Admin</title>
+
+    <link rel="icom" href="~/favicon.ico" />
+
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="~/admin/css/styles.css" rel="stylesheet" />
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="@Url.Action("Index","Home")">Admin Deshbord</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    @*<li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li><hr class="dropdown-divider" /></li>*@
+                    <li><a class="dropdown-item" href="@Url.Action("Logout","Log")">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Core</div>
+                        <a class="nav-link" href="@Url.Action("Index","Home")">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                     
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Mark Input
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapse1st" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                    First Semester
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapse1st" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="@Url.Action("Index","DCSA1201_mark1")">DCSA 1201</a>
+                                        <a class="nav-link" href="@Url.Action("Index","DCSA1302_mark1")">DCSA 1302</a>
+                                        <a class="nav-link" href="@Url.Action("Index","DCSA1303_mark1")">DCSA 1303</a>
+                                        <a class="nav-link" href="@Url.Action("Index","DCSA1304_mark1")">DCSA 1304</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapse2nd" aria-expanded="false" aria-controls="pagesCollapseError">
+                                    Second Semester
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapse2nd" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="@Url.Action("Index","DCSA2301_mark2")">DCSA 2301</a>
+                                        <a class="nav-link" href="@Url.Action("Index","DCSA2302_mark2")">DCSA 2302</a>
+                                        <a class="nav-link" href="@Url.Action("Index","DCSA2303_mark2")">DCSA 2303</a>
+                                        <a class="nav-link" href="@Url.Action("Index","DCSA2304_mark2")">DCSA 2304</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapse3rd" aria-expanded="false" aria-controls="pagesCollapseError">
+                                    Third Semester
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapse3rd" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="@Url.Action("Index","DCSA3301_mark3")">DCSA 3301</a>
+                                        <a class="nav-link" href="@Url.Action("Index","DCSA3302_mark3")">DCSA 3302</a>
+                                        <a class="nav-link" href="@Url.Action("Index","DCSA3303_mark3")">DCSA 3303</a>
+                                        <a class="nav-link" href="@Url.Action("Index","DCSA3304_mark3")">DCSA 3304</a>
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div>
+
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePagesExport" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-file-export"></i></div>
+                            Export Mark
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePagesExport" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapse1stExport_Mark" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                    First Semester
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapse1stExport_Mark" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="@Url.Action("ExportDCSA1201","ExportDCSA_1201")">DCSA 1201 </a>
+                                        <a class="nav-link" href="@Url.Action("ExportDCSA1302","ExportDCSA_1302")">DCSA 1302</a>
+                                        <a class="nav-link" href="@Url.Action("ExportDCSA1303","ExportDCSA_1303")">DCSA 1303</a>
+                                        <a class="nav-link" href="@Url.Action("ExportDCSA1304","ExportDCSA_1304")">DCSA 1304</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapse2ndExport_Mark" aria-expanded="false" aria-controls="pagesCollapseError">
+                                    Second Semester
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapse2ndExport_Mark" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="@Url.Action("ExportDCSA2301","ExportDCSA_2301")">DCSA 2301</a>
+                                        <a class="nav-link" href="@Url.Action("ExportDCSA2302","ExportDCSA_2302")">DCSA 2302</a>
+                                        <a class="nav-link" href="@Url.Action("ExportDCSA2303","ExportDCSA_2303")">DCSA 2303</a>
+                                        <a class="nav-link" href="@Url.Action("ExportDCSA2304","ExportDCSA_2304")">DCSA 2304</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapse3rdExport_Mark" aria-expanded="false" aria-controls="pagesCollapseError">
+                                    Third Semester
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapse3rdExport_Mark" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="@Url.Action("ExportDCSA3201","ExportDCSA_3201")">DCSA 3301</a>
+                                        <a class="nav-link" href="@Url.Action("ExportDCSA3302","ExportDCSA_3302")">DCSA 3302</a>
+                                        <a class="nav-link" href="@Url.Action("ExportDCSA3303","ExportDCSA_3303")">DCSA 3303</a>
+                                        <a class="nav-link" href="@Url.Action("ExportDCSA3304","ExportDCSA_3304")">DCSA 3304</a>
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div>
+
+
+                        <div class="sb-sidenav-menu-heading">Information</div>
+                        <a class="nav-link" href="@Url.Action("Index","Users")">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            User
+                        </a>
+                        <a class="nav-link" href="@Url.Action("Index","Center")">
+                            <div class="sb-nav-link-icon"><i class="fas fa-university"></i></div>
+                            Center 
+                        </a>
+                        <a class="nav-link" href="@Url.Action("Index","Students")">
+                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                            Student
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
+                            Files
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    Admin
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    @RenderBody()
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy;@DateTime.Now.Year Banladesh Open University | CSE Department </div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="~/admin/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="~/admin/assets/demo/chart-area-demo.js"></script>
+    <script src="~/admin/assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="~/admin/js/datatables-simple-demo.js"></script>
+</body>
+</html>
+
+
+

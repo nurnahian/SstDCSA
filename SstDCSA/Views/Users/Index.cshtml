@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SstDCSA.Models.tbl_users>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center mt-3">
+    <i class="fas fa-user"></i>
+    Users
+</h2>
+
+<p>
+    @Html.ActionLink("Create New User", "Create", "Users", null, new { @class = "btn btn-info btn-outline-dark" })
+</p>
+
+
+<table class="text-center table table-striped table-hover">
+    <tr>
+        <th>
+            Serial No
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_center.center_code)
+        </th>
+        <th></th>
+        <th>
+            Action
+        </th>
+
+        <th></th>
+    </tr>
+
+    @{ int i = 1; }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @i
+            </td>
+            @{ i++; }
+            <td>
+                @Html.DisplayFor(modelItem => item.user_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbl_center.center_code)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.user_id }, new { @class = "btn btn-outline-warning" })
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.user_id }, new { @class = "btn btn-outline-secondary" })
+            </td>
+            <td>              
+                @Html.ActionLink("Delete", "Delete", new { id = item.user_id }, new { @class = "btn btn-outline-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

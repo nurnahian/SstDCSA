@@ -1,0 +1,148 @@
+﻿@model SstDCSA.Models.tbl_DCSA1302_mark1
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield; /* Firefox */
+    }
+</style>
+
+<h2 class="text-center mt-3">Office Automation and MS Office (DCSA 1302) Mark</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="form-horizontal bg-transparent border mt-5" style="max-width:650px;margin:auto;">
+
+            <div class="form-horizontal">
+                <h4 class="text-center mt-2 my-2">Input Mark</h4>
+                <div class="text-danger bg-warning text-center">Carefully Input Result</div>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.st_registration, "st_registration", htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-12">
+                        @Html.DropDownList("st_registration", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.st_registration, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.subj_code, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.subj_code, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.subj_code, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.tma1, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.tma1, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter TMA 1 mark less then or equal 5" } })
+                        @Html.ValidationMessageFor(model => model.tma1, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.tma2, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.tma2, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter TMA 2 mark less then or equal 5" } })
+                        @Html.ValidationMessageFor(model => model.tma2, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.total_tma, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.total_tma, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.total_tma, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.experiment, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.experiment, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter experiment mark less then or equal 10" } })
+                        @Html.ValidationMessageFor(model => model.experiment, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.record_book, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.record_book, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter record book mark less then or equal 5" } })
+                        @Html.ValidationMessageFor(model => model.record_book, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.viva, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.viva, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter viva mark less then or equal 5" } })
+                        @Html.ValidationMessageFor(model => model.viva, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.total_practical, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.total_practical, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.total_practical, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.st_center_code, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.st_center_code, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter valide study cender code" } })
+                        @Html.ValidationMessageFor(model => model.st_center_code, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.submit_date, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.submit_date, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.submit_date, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.exam_term, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.exam_term, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter valide exam term" } })
+                        @Html.ValidationMessageFor(model => model.exam_term, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default btn-outline-dark mt-3 my-3" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,64 @@
+﻿@model SstDCSA.Models.tbl_center
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield; /* Firefox */
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="form-horizontal bg-transparent border mt-5" style="max-width:550px;margin:auto;">
+
+            <div class="form-horizontal">
+                <h4 class="text-center mt-2 my-2">Study Center</h4>
+                <div class="text-danger bg-warning text-center">Be Careful Study Center Code Can Input Only One Time and Not Editable</div>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.center_name, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.center_name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.center_name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.center_code, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.center_code, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.center_code, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default btn-outline-dark mt-3 my-3" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

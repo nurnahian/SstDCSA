@@ -1,0 +1,79 @@
+﻿@model SstDCSA.Models.tbl_student
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="text-center mt-3">Details</h2>
+
+<div class="row">
+    <div class="form-horizontal bg-transparent border mt-5" style="max-width:750px;margin:auto;">
+        <div>
+            <h4 class="text-center mt-2 my-2">Student Details</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_registration)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_registration)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_admission_year)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_admission_year)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_semester1)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_semester1)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_semester2)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_semester2)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_semester3)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_semester3)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_center_code)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_center_code)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.st_registration }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+        </div>
+    </div>

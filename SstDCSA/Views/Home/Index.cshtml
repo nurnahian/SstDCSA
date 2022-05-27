@@ -1,0 +1,188 @@
+﻿@using SstDCSA.Models;
+@model dynamic
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+@*<link href="~/Content/StyleSheet1.css" rel="stylesheet" />*@
+
+
+<h1 class="mt-4">Dashboard</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Status</li>
+</ol>
+
+<!--<div class="marquee">
+    <div>
+        <a href="#"> ++++ this is a running text aka marquee using html &amp; css + text length is limited to the width</a>
+        <a> ++++ this is a running text aka marquee using html &amp; css + text length is limited to the width</a>-->
+        <!-- you need the second one - otherwise there is a lot of blank space and it will look odd -->
+        <!--<span>++++ this is a running text aka marquee using html &amp; css + text length is limited to the width</span>
+    </div>
+</div>-->
+
+<div class="row">
+
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-primary text-white mb-4">
+            <div class="card-body">Total Stutdent @ViewBag.TotalStudent</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="#">View Details</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-warning text-white mb-4">
+            <div class="card-body">Total User @ViewBag.TotalUser </div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="#">View Details</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-success text-white mb-4">
+            <div class="card-body">Submit Result</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="#">View Details</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-danger text-white mb-4">
+            <div class="card-body">Total Submited Result</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <a class="small text-white stretched-link" href="#">View Details</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-user"> </i>
+                User
+            </div>
+            <div class="card-body">
+                <table class="text-center table table-hover">
+                    <tr>
+                        <th>
+                            No
+                        </th>
+                        <th>
+                            name
+                        </th>
+                        <th>
+                            User Role
+                        </th>
+                        <th>
+                           Center Code
+                        </th>
+
+                    </tr>
+                    @{ int i = 1; }
+                    @foreach (tbl_users item in Model.UserList)
+                    {
+                        <tr>
+                            <td>
+                                @i
+                            </td>
+                            @{ i++; }
+                            <td>
+                                @item.user_name
+                            </td>
+                            <td>
+                                @item.user_role
+                            </td>
+                            <td>
+                                @item.tbl_center.center_code
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                @*<i class="fas fa-chart-bar me-1"></i>*@
+                <i class="fas fa-university"></i>
+                Center
+            </div>
+            <div class="card-body">
+                <table class="text-center table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Center Name</th>
+                            <th scope="col">Center Coode</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ int j = 1; }
+                        @foreach (tbl_center item in Model.CenterList)
+                        {
+                            <tr>
+                                <th scope="row">
+                                    @j
+                                </th>
+                                @{ j++; }
+
+                                <td>@item.center_name</td>
+                                <td>@item.center_code</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        All Result
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Student ID</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Subject Code</th>
+                    <th scope="col">Total TMA</th>
+                    <th scope="col">Total Practical</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int k = 1; }
+                @foreach (tbl_DCSA1201_mark1 item in Model.DCSA1201Mark)
+                {
+                    <tr>
+                        <th scope="row">
+                            @k
+                        </th>
+                        @{ k++; }
+
+                        <td>@item.st_registration</td>
+                        <td>@item.tbl_student.st_name</td>
+                        <td>@item.subj_code</td>
+                        <td>@item.total_tma</td>
+                        <td>@item.total_practical</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
+

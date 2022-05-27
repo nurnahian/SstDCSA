@@ -1,0 +1,35 @@
+﻿/* marquee div container */
+.marquee {
+    font-size: 2vw;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    height: 2.5vw;
+    overflow: hidden;
+    background-color: #25b0f6;
+    position: relative;
+}
+    /* nested div inside the container */
+    .marquee div {
+        display: block;
+        width: 200%;
+        position: absolute;
+        overflow: hidden;
+        animation: marquee 12s linear infinite;
+    }
+
+    /* span with text */
+    .marquee a {
+        float: left;
+        width: 50%;
+        color:aliceblue;
+    }
+/* keyframe */
+@keyframes marquee {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
+}

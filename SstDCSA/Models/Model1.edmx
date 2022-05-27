@@ -1,0 +1,1408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DcsaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tbl_center">
+          <Key>
+            <PropertyRef Name="center_code" />
+          </Key>
+          <Property Name="center_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="center_code" Type="int" Nullable="false" />
+          <Property Name="center_name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA1201_mark1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_registration" Type="varchar" MaxLength="50" />
+          <Property Name="subj_code" Type="varchar" MaxLength="50" />
+          <Property Name="tma1" Type="int" />
+          <Property Name="tma2" Type="int" />
+          <Property Name="total_tma" Type="int" />
+          <Property Name="experiment" Type="int" />
+          <Property Name="record_book" Type="int" />
+          <Property Name="viva" Type="int" />
+          <Property Name="total_practical" Type="int" />
+          <Property Name="exam_term" Type="int" />
+          <Property Name="st_center_code" Type="int" />
+          <Property Name="submit_date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA1302_mark1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_registration" Type="varchar" MaxLength="50" />
+          <Property Name="subj_code" Type="varchar" MaxLength="50" />
+          <Property Name="tma1" Type="int" />
+          <Property Name="tma2" Type="int" />
+          <Property Name="total_tma" Type="int" />
+          <Property Name="experiment" Type="int" />
+          <Property Name="record_book" Type="int" />
+          <Property Name="viva" Type="int" />
+          <Property Name="total_practical" Type="int" />
+          <Property Name="exam_term" Type="int" />
+          <Property Name="st_center_code" Type="int" />
+          <Property Name="submit_date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA1303_mark1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_registration" Type="varchar" MaxLength="50" />
+          <Property Name="subj_code" Type="varchar" MaxLength="50" />
+          <Property Name="tma1" Type="int" />
+          <Property Name="tma2" Type="int" />
+          <Property Name="total_tma" Type="int" />
+          <Property Name="experiment" Type="int" />
+          <Property Name="record_book" Type="int" />
+          <Property Name="viva" Type="int" />
+          <Property Name="total_practical" Type="int" />
+          <Property Name="exam_term" Type="int" />
+          <Property Name="st_center_code" Type="int" />
+          <Property Name="submit_date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA1304_mark1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_registration" Type="varchar" MaxLength="50" />
+          <Property Name="subj_code" Type="varchar" MaxLength="50" />
+          <Property Name="tma1" Type="int" />
+          <Property Name="tma2" Type="int" />
+          <Property Name="total_tma" Type="int" />
+          <Property Name="experiment" Type="int" />
+          <Property Name="record_book" Type="int" />
+          <Property Name="viva" Type="int" />
+          <Property Name="total_practical" Type="int" />
+          <Property Name="exam_term" Type="int" />
+          <Property Name="st_center_code" Type="int" />
+          <Property Name="submit_date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA2301_mark2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_registration" Type="varchar" MaxLength="50" />
+          <Property Name="subj_code" Type="varchar" MaxLength="50" />
+          <Property Name="tma1" Type="int" />
+          <Property Name="tma2" Type="int" />
+          <Property Name="total_tma" Type="int" />
+          <Property Name="experiment" Type="int" />
+          <Property Name="record_book" Type="int" />
+          <Property Name="viva" Type="int" />
+          <Property Name="total_practical" Type="int" />
+          <Property Name="exam_term" Type="int" />
+          <Property Name="st_center_code" Type="int" />
+          <Property Name="submit_date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA2302_mark2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_registration" Type="varchar" MaxLength="50" />
+          <Property Name="subj_code" Type="varchar" MaxLength="50" />
+          <Property Name="tma1" Type="int" />
+          <Property Name="tma2" Type="int" />
+          <Property Name="total_tma" Type="int" />
+          <Property Name="experiment" Type="int" />
+          <Property Name="record_book" Type="int" />
+          <Property Name="viva" Type="int" />
+          <Property Name="total_practical" Type="int" />
+          <Property Name="exam_term" Type="int" />
+          <Property Name="st_center_code" Type="int" />
+          <Property Name="submit_date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA2303_mark2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_registration" Type="varchar" MaxLength="50" />
+          <Property Name="subj_code" Type="varchar" MaxLength="50" />
+          <Property Name="tma1" Type="int" />
+          <Property Name="tma2" Type="int" />
+          <Property Name="total_tma" Type="int" />
+          <Property Name="experiment" Type="int" />
+          <Property Name="record_book" Type="int" />
+          <Property Name="viva" Type="int" />
+          <Property Name="total_practical" Type="int" />
+          <Property Name="exam_term" Type="int" />
+          <Property Name="st_center_code" Type="int" />
+          <Property Name="submit_date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA2304_mark2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_registration" Type="varchar" MaxLength="50" />
+          <Property Name="subj_code" Type="varchar" MaxLength="50" />
+          <Property Name="tma1" Type="int" />
+          <Property Name="tma2" Type="int" />
+          <Property Name="total_tma" Type="int" />
+          <Property Name="experiment" Type="int" />
+          <Property Name="record_book" Type="int" />
+          <Property Name="viva" Type="int" />
+          <Property Name="total_practical" Type="int" />
+          <Property Name="exam_term" Type="int" />
+          <Property Name="st_center_code" Type="int" />
+          <Property Name="submit_date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA3301_mark3">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_registration" Type="varchar" MaxLength="50" />
+          <Property Name="subj_code" Type="varchar" MaxLength="50" />
+          <Property Name="tma1" Type="int" />
+          <Property Name="tma2" Type="int" />
+          <Property Name="total_tma" Type="int" />
+          <Property Name="experiment" Type="int" />
+          <Property Name="record_book" Type="int" />
+          <Property Name="viva" Type="int" />
+          <Property Name="total_practical" Type="int" />
+          <Property Name="exam_term" Type="int" />
+          <Property Name="st_center_code" Type="int" />
+          <Property Name="submit_date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA3302_mark3">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_registration" Type="varchar" MaxLength="50" />
+          <Property Name="subj_code" Type="varchar" MaxLength="50" />
+          <Property Name="tma1" Type="int" />
+          <Property Name="tma2" Type="int" />
+          <Property Name="total_tma" Type="int" />
+          <Property Name="experiment" Type="int" />
+          <Property Name="record_book" Type="int" />
+          <Property Name="viva" Type="int" />
+          <Property Name="total_practical" Type="int" />
+          <Property Name="exam_term" Type="int" />
+          <Property Name="st_center_code" Type="int" />
+          <Property Name="submit_date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA3303_mark3">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_registration" Type="varchar" MaxLength="50" />
+          <Property Name="subj_code" Type="varchar" MaxLength="50" />
+          <Property Name="tma1" Type="int" />
+          <Property Name="tma2" Type="int" />
+          <Property Name="total_tma" Type="int" />
+          <Property Name="experiment" Type="int" />
+          <Property Name="record_book" Type="int" />
+          <Property Name="viva" Type="int" />
+          <Property Name="total_practical" Type="int" />
+          <Property Name="exam_term" Type="int" />
+          <Property Name="st_center_code" Type="int" />
+          <Property Name="submit_date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA3304_mark3">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_registration" Type="varchar" MaxLength="50" />
+          <Property Name="subj_code" Type="varchar" MaxLength="50" />
+          <Property Name="project_report" Type="int" />
+          <Property Name="viva" Type="int" />
+          <Property Name="exam_term" Type="int" />
+          <Property Name="st_center_code" Type="int" />
+          <Property Name="submit_date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_student">
+          <Key>
+            <PropertyRef Name="st_registration" />
+          </Key>
+          <Property Name="st_registration" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="st_name" Type="varchar" MaxLength="100" />
+          <Property Name="st_admission_year" Type="date" />
+          <Property Name="st_semester1" Type="bit" />
+          <Property Name="st_semester2" Type="bit" />
+          <Property Name="st_semester3" Type="bit" />
+          <Property Name="st_center_code" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_name" Type="varchar" MaxLength="50" />
+          <Property Name="user_password" Type="varchar" MaxLength="50" />
+          <Property Name="user_role" Type="varchar" MaxLength="50" />
+          <Property Name="user_center_code" Type="int" />
+        </EntityType>
+        <Association Name="FK_tbl_DCSA1201_mark1_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_DCSA1201_mark1" Type="Self.tbl_DCSA1201_mark1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA1201_mark1">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA1302_mark1_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_DCSA1302_mark1" Type="Self.tbl_DCSA1302_mark1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA1302_mark1">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA1303_mark1_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_DCSA1303_mark1" Type="Self.tbl_DCSA1303_mark1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA1303_mark1">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA1304_mark1_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_DCSA1304_mark1" Type="Self.tbl_DCSA1304_mark1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA1304_mark1">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA2301_mark2_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_DCSA2301_mark2" Type="Self.tbl_DCSA2301_mark2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA2301_mark2">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA2302_mark2_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_DCSA2302_mark2" Type="Self.tbl_DCSA2302_mark2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA2302_mark2">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA2303_mark2_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_DCSA2303_mark2" Type="Self.tbl_DCSA2303_mark2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA2303_mark2">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA2304_mark2_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_DCSA2304_mark2" Type="Self.tbl_DCSA2304_mark2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA2304_mark2">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA3301_mark3_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_DCSA3301_mark3" Type="Self.tbl_DCSA3301_mark3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA3301_mark3">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA3302_mark3_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_DCSA3302_mark3" Type="Self.tbl_DCSA3302_mark3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA3302_mark3">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA3303_mark3_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_DCSA3303_mark3" Type="Self.tbl_DCSA3303_mark3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA3303_mark3">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA3304_mark3_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_DCSA3304_mark3" Type="Self.tbl_DCSA3304_mark3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA3304_mark3">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_users_tbl_center">
+          <End Role="tbl_center" Type="Self.tbl_center" Multiplicity="0..1" />
+          <End Role="tbl_users" Type="Self.tbl_users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_center">
+              <PropertyRef Name="center_code" />
+            </Principal>
+            <Dependent Role="tbl_users">
+              <PropertyRef Name="user_center_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="DcsaModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_center" EntityType="Self.tbl_center" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DCSA1201_mark1" EntityType="Self.tbl_DCSA1201_mark1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DCSA1302_mark1" EntityType="Self.tbl_DCSA1302_mark1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DCSA1303_mark1" EntityType="Self.tbl_DCSA1303_mark1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DCSA1304_mark1" EntityType="Self.tbl_DCSA1304_mark1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DCSA2301_mark2" EntityType="Self.tbl_DCSA2301_mark2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DCSA2302_mark2" EntityType="Self.tbl_DCSA2302_mark2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DCSA2303_mark2" EntityType="Self.tbl_DCSA2303_mark2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DCSA2304_mark2" EntityType="Self.tbl_DCSA2304_mark2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DCSA3301_mark3" EntityType="Self.tbl_DCSA3301_mark3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DCSA3302_mark3" EntityType="Self.tbl_DCSA3302_mark3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DCSA3303_mark3" EntityType="Self.tbl_DCSA3303_mark3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DCSA3304_mark3" EntityType="Self.tbl_DCSA3304_mark3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_student" EntityType="Self.tbl_student" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_users" EntityType="Self.tbl_users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tbl_DCSA1201_mark1_tbl_student" Association="Self.FK_tbl_DCSA1201_mark1_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA1201_mark1" EntitySet="tbl_DCSA1201_mark1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA1302_mark1_tbl_student" Association="Self.FK_tbl_DCSA1302_mark1_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA1302_mark1" EntitySet="tbl_DCSA1302_mark1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA1303_mark1_tbl_student" Association="Self.FK_tbl_DCSA1303_mark1_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA1303_mark1" EntitySet="tbl_DCSA1303_mark1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA1304_mark1_tbl_student" Association="Self.FK_tbl_DCSA1304_mark1_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA1304_mark1" EntitySet="tbl_DCSA1304_mark1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA2301_mark2_tbl_student" Association="Self.FK_tbl_DCSA2301_mark2_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA2301_mark2" EntitySet="tbl_DCSA2301_mark2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA2302_mark2_tbl_student" Association="Self.FK_tbl_DCSA2302_mark2_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA2302_mark2" EntitySet="tbl_DCSA2302_mark2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA2303_mark2_tbl_student" Association="Self.FK_tbl_DCSA2303_mark2_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA2303_mark2" EntitySet="tbl_DCSA2303_mark2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA2304_mark2_tbl_student" Association="Self.FK_tbl_DCSA2304_mark2_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA2304_mark2" EntitySet="tbl_DCSA2304_mark2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA3301_mark3_tbl_student" Association="Self.FK_tbl_DCSA3301_mark3_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA3301_mark3" EntitySet="tbl_DCSA3301_mark3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA3302_mark3_tbl_student" Association="Self.FK_tbl_DCSA3302_mark3_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA3302_mark3" EntitySet="tbl_DCSA3302_mark3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA3303_mark3_tbl_student" Association="Self.FK_tbl_DCSA3303_mark3_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA3303_mark3" EntitySet="tbl_DCSA3303_mark3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA3304_mark3_tbl_student" Association="Self.FK_tbl_DCSA3304_mark3_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA3304_mark3" EntitySet="tbl_DCSA3304_mark3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_users_tbl_center" Association="Self.FK_tbl_users_tbl_center">
+            <End Role="tbl_center" EntitySet="tbl_center" />
+            <End Role="tbl_users" EntitySet="tbl_users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DcsaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbl_center">
+          <Key>
+            <PropertyRef Name="center_code" />
+          </Key>
+          <Property Name="center_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="center_code" Type="Int32" Nullable="false" />
+          <Property Name="center_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_users" Relationship="Self.FK_tbl_users_tbl_center" FromRole="tbl_center" ToRole="tbl_users" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA1201_mark1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subj_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tma1" Type="Int32" />
+          <Property Name="tma2" Type="Int32" />
+          <Property Name="total_tma" Type="Int32" />
+          <Property Name="experiment" Type="Int32" />
+          <Property Name="record_book" Type="Int32" />
+          <Property Name="viva" Type="Int32" />
+          <Property Name="total_practical" Type="Int32" />
+          <Property Name="st_center_code" Type="Int32" />
+          <Property Name="submit_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbl_student" Relationship="Self.FK_tbl_DCSA1201_mark1_tbl_student" FromRole="tbl_DCSA1201_mark1" ToRole="tbl_student" />
+          <Property Name="exam_term" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA1302_mark1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subj_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tma1" Type="Int32" />
+          <Property Name="tma2" Type="Int32" />
+          <Property Name="total_tma" Type="Int32" />
+          <Property Name="experiment" Type="Int32" />
+          <Property Name="record_book" Type="Int32" />
+          <Property Name="viva" Type="Int32" />
+          <Property Name="total_practical" Type="Int32" />
+          <Property Name="st_center_code" Type="Int32" />
+          <Property Name="submit_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbl_student" Relationship="Self.FK_tbl_DCSA1302_mark1_tbl_student" FromRole="tbl_DCSA1302_mark1" ToRole="tbl_student" />
+          <Property Name="exam_term" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA1303_mark1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subj_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tma1" Type="Int32" />
+          <Property Name="tma2" Type="Int32" />
+          <Property Name="total_tma" Type="Int32" />
+          <Property Name="experiment" Type="Int32" />
+          <Property Name="record_book" Type="Int32" />
+          <Property Name="viva" Type="Int32" />
+          <Property Name="total_practical" Type="Int32" />
+          <Property Name="st_center_code" Type="Int32" />
+          <Property Name="submit_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbl_student" Relationship="Self.FK_tbl_DCSA1303_mark1_tbl_student" FromRole="tbl_DCSA1303_mark1" ToRole="tbl_student" />
+          <Property Name="exam_term" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA1304_mark1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subj_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tma1" Type="Int32" />
+          <Property Name="tma2" Type="Int32" />
+          <Property Name="total_tma" Type="Int32" />
+          <Property Name="experiment" Type="Int32" />
+          <Property Name="record_book" Type="Int32" />
+          <Property Name="viva" Type="Int32" />
+          <Property Name="total_practical" Type="Int32" />
+          <Property Name="st_center_code" Type="Int32" />
+          <Property Name="submit_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbl_student" Relationship="Self.FK_tbl_DCSA1304_mark1_tbl_student" FromRole="tbl_DCSA1304_mark1" ToRole="tbl_student" />
+          <Property Name="exam_term" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA2301_mark2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subj_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tma1" Type="Int32" />
+          <Property Name="tma2" Type="Int32" />
+          <Property Name="total_tma" Type="Int32" />
+          <Property Name="experiment" Type="Int32" />
+          <Property Name="record_book" Type="Int32" />
+          <Property Name="viva" Type="Int32" />
+          <Property Name="total_practical" Type="Int32" />
+          <Property Name="st_center_code" Type="Int32" />
+          <Property Name="submit_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbl_student" Relationship="Self.FK_tbl_DCSA2301_mark2_tbl_student" FromRole="tbl_DCSA2301_mark2" ToRole="tbl_student" />
+          <Property Name="exam_term" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA2302_mark2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subj_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tma1" Type="Int32" />
+          <Property Name="tma2" Type="Int32" />
+          <Property Name="total_tma" Type="Int32" />
+          <Property Name="experiment" Type="Int32" />
+          <Property Name="record_book" Type="Int32" />
+          <Property Name="viva" Type="Int32" />
+          <Property Name="total_practical" Type="Int32" />
+          <Property Name="st_center_code" Type="Int32" />
+          <Property Name="submit_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbl_student" Relationship="Self.FK_tbl_DCSA2302_mark2_tbl_student" FromRole="tbl_DCSA2302_mark2" ToRole="tbl_student" />
+          <Property Name="exam_term" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA2303_mark2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subj_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tma1" Type="Int32" />
+          <Property Name="tma2" Type="Int32" />
+          <Property Name="total_tma" Type="Int32" />
+          <Property Name="experiment" Type="Int32" />
+          <Property Name="record_book" Type="Int32" />
+          <Property Name="viva" Type="Int32" />
+          <Property Name="total_practical" Type="Int32" />
+          <Property Name="st_center_code" Type="Int32" />
+          <Property Name="submit_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbl_student" Relationship="Self.FK_tbl_DCSA2303_mark2_tbl_student" FromRole="tbl_DCSA2303_mark2" ToRole="tbl_student" />
+          <Property Name="exam_term" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA2304_mark2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subj_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tma1" Type="Int32" />
+          <Property Name="tma2" Type="Int32" />
+          <Property Name="total_tma" Type="Int32" />
+          <Property Name="experiment" Type="Int32" />
+          <Property Name="record_book" Type="Int32" />
+          <Property Name="viva" Type="Int32" />
+          <Property Name="total_practical" Type="Int32" />
+          <Property Name="st_center_code" Type="Int32" />
+          <Property Name="submit_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbl_student" Relationship="Self.FK_tbl_DCSA2304_mark2_tbl_student" FromRole="tbl_DCSA2304_mark2" ToRole="tbl_student" />
+          <Property Name="exam_term" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA3301_mark3">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subj_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tma1" Type="Int32" />
+          <Property Name="tma2" Type="Int32" />
+          <Property Name="total_tma" Type="Int32" />
+          <Property Name="experiment" Type="Int32" />
+          <Property Name="record_book" Type="Int32" />
+          <Property Name="viva" Type="Int32" />
+          <Property Name="total_practical" Type="Int32" />
+          <Property Name="st_center_code" Type="Int32" />
+          <Property Name="submit_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbl_student" Relationship="Self.FK_tbl_DCSA3301_mark3_tbl_student" FromRole="tbl_DCSA3301_mark3" ToRole="tbl_student" />
+          <Property Name="exam_term" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA3302_mark3">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subj_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tma1" Type="Int32" />
+          <Property Name="tma2" Type="Int32" />
+          <Property Name="total_tma" Type="Int32" />
+          <Property Name="experiment" Type="Int32" />
+          <Property Name="record_book" Type="Int32" />
+          <Property Name="viva" Type="Int32" />
+          <Property Name="total_practical" Type="Int32" />
+          <Property Name="st_center_code" Type="Int32" />
+          <Property Name="submit_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbl_student" Relationship="Self.FK_tbl_DCSA3302_mark3_tbl_student" FromRole="tbl_DCSA3302_mark3" ToRole="tbl_student" />
+          <Property Name="exam_term" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA3303_mark3">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subj_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tma1" Type="Int32" />
+          <Property Name="tma2" Type="Int32" />
+          <Property Name="total_tma" Type="Int32" />
+          <Property Name="experiment" Type="Int32" />
+          <Property Name="record_book" Type="Int32" />
+          <Property Name="viva" Type="Int32" />
+          <Property Name="total_practical" Type="Int32" />
+          <Property Name="st_center_code" Type="Int32" />
+          <Property Name="submit_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbl_student" Relationship="Self.FK_tbl_DCSA3303_mark3_tbl_student" FromRole="tbl_DCSA3303_mark3" ToRole="tbl_student" />
+          <Property Name="exam_term" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_DCSA3304_mark3">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subj_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="project_report" Type="Int32" />
+          <Property Name="viva" Type="Int32" />
+          <Property Name="st_center_code" Type="Int32" />
+          <Property Name="submit_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tbl_student" Relationship="Self.FK_tbl_DCSA3304_mark3_tbl_student" FromRole="tbl_DCSA3304_mark3" ToRole="tbl_student" />
+          <Property Name="exam_term" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_student">
+          <Key>
+            <PropertyRef Name="st_registration" />
+          </Key>
+          <Property Name="st_registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="st_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="st_admission_year" Type="DateTime" Precision="0" />
+          <Property Name="st_semester1" Type="Boolean" />
+          <Property Name="st_semester2" Type="Boolean" />
+          <Property Name="st_semester3" Type="Boolean" />
+          <Property Name="st_center_code" Type="Int32" />
+          <NavigationProperty Name="tbl_DCSA1201_mark1" Relationship="Self.FK_tbl_DCSA1201_mark1_tbl_student" FromRole="tbl_student" ToRole="tbl_DCSA1201_mark1" />
+          <NavigationProperty Name="tbl_DCSA1302_mark1" Relationship="Self.FK_tbl_DCSA1302_mark1_tbl_student" FromRole="tbl_student" ToRole="tbl_DCSA1302_mark1" />
+          <NavigationProperty Name="tbl_DCSA1303_mark1" Relationship="Self.FK_tbl_DCSA1303_mark1_tbl_student" FromRole="tbl_student" ToRole="tbl_DCSA1303_mark1" />
+          <NavigationProperty Name="tbl_DCSA1304_mark1" Relationship="Self.FK_tbl_DCSA1304_mark1_tbl_student" FromRole="tbl_student" ToRole="tbl_DCSA1304_mark1" />
+          <NavigationProperty Name="tbl_DCSA2301_mark2" Relationship="Self.FK_tbl_DCSA2301_mark2_tbl_student" FromRole="tbl_student" ToRole="tbl_DCSA2301_mark2" />
+          <NavigationProperty Name="tbl_DCSA2302_mark2" Relationship="Self.FK_tbl_DCSA2302_mark2_tbl_student" FromRole="tbl_student" ToRole="tbl_DCSA2302_mark2" />
+          <NavigationProperty Name="tbl_DCSA2303_mark2" Relationship="Self.FK_tbl_DCSA2303_mark2_tbl_student" FromRole="tbl_student" ToRole="tbl_DCSA2303_mark2" />
+          <NavigationProperty Name="tbl_DCSA2304_mark2" Relationship="Self.FK_tbl_DCSA2304_mark2_tbl_student" FromRole="tbl_student" ToRole="tbl_DCSA2304_mark2" />
+          <NavigationProperty Name="tbl_DCSA3301_mark3" Relationship="Self.FK_tbl_DCSA3301_mark3_tbl_student" FromRole="tbl_student" ToRole="tbl_DCSA3301_mark3" />
+          <NavigationProperty Name="tbl_DCSA3302_mark3" Relationship="Self.FK_tbl_DCSA3302_mark3_tbl_student" FromRole="tbl_student" ToRole="tbl_DCSA3302_mark3" />
+          <NavigationProperty Name="tbl_DCSA3303_mark3" Relationship="Self.FK_tbl_DCSA3303_mark3_tbl_student" FromRole="tbl_student" ToRole="tbl_DCSA3303_mark3" />
+          <NavigationProperty Name="tbl_DCSA3304_mark3" Relationship="Self.FK_tbl_DCSA3304_mark3_tbl_student" FromRole="tbl_student" ToRole="tbl_DCSA3304_mark3" />
+        </EntityType>
+        <EntityType Name="tbl_users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_center_code" Type="Int32" />
+          <NavigationProperty Name="tbl_center" Relationship="Self.FK_tbl_users_tbl_center" FromRole="tbl_users" ToRole="tbl_center" />
+        </EntityType>
+        <Association Name="FK_tbl_users_tbl_center">
+          <End Role="tbl_center" Type="Self.tbl_center" Multiplicity="0..1" />
+          <End Role="tbl_users" Type="Self.tbl_users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_center">
+              <PropertyRef Name="center_code" />
+            </Principal>
+            <Dependent Role="tbl_users">
+              <PropertyRef Name="user_center_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA1201_mark1_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1" />
+          <End Role="tbl_DCSA1201_mark1" Type="Self.tbl_DCSA1201_mark1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA1201_mark1">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA1302_mark1_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1" />
+          <End Role="tbl_DCSA1302_mark1" Type="Self.tbl_DCSA1302_mark1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA1302_mark1">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA1303_mark1_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1" />
+          <End Role="tbl_DCSA1303_mark1" Type="Self.tbl_DCSA1303_mark1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA1303_mark1">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA1304_mark1_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1" />
+          <End Role="tbl_DCSA1304_mark1" Type="Self.tbl_DCSA1304_mark1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA1304_mark1">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA2301_mark2_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1" />
+          <End Role="tbl_DCSA2301_mark2" Type="Self.tbl_DCSA2301_mark2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA2301_mark2">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA2302_mark2_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1" />
+          <End Role="tbl_DCSA2302_mark2" Type="Self.tbl_DCSA2302_mark2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA2302_mark2">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA2303_mark2_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1" />
+          <End Role="tbl_DCSA2303_mark2" Type="Self.tbl_DCSA2303_mark2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA2303_mark2">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA2304_mark2_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1" />
+          <End Role="tbl_DCSA2304_mark2" Type="Self.tbl_DCSA2304_mark2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA2304_mark2">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA3301_mark3_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1" />
+          <End Role="tbl_DCSA3301_mark3" Type="Self.tbl_DCSA3301_mark3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA3301_mark3">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA3302_mark3_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1" />
+          <End Role="tbl_DCSA3302_mark3" Type="Self.tbl_DCSA3302_mark3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA3302_mark3">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA3303_mark3_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1" />
+          <End Role="tbl_DCSA3303_mark3" Type="Self.tbl_DCSA3303_mark3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA3303_mark3">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DCSA3304_mark3_tbl_student">
+          <End Role="tbl_student" Type="Self.tbl_student" Multiplicity="0..1" />
+          <End Role="tbl_DCSA3304_mark3" Type="Self.tbl_DCSA3304_mark3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_student">
+              <PropertyRef Name="st_registration" />
+            </Principal>
+            <Dependent Role="tbl_DCSA3304_mark3">
+              <PropertyRef Name="st_registration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DcsaContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tbl_center" EntityType="Self.tbl_center" />
+          <EntitySet Name="tbl_DCSA1201_mark1" EntityType="Self.tbl_DCSA1201_mark1" />
+          <EntitySet Name="tbl_DCSA1302_mark1" EntityType="Self.tbl_DCSA1302_mark1" />
+          <EntitySet Name="tbl_DCSA1303_mark1" EntityType="Self.tbl_DCSA1303_mark1" />
+          <EntitySet Name="tbl_DCSA1304_mark1" EntityType="Self.tbl_DCSA1304_mark1" />
+          <EntitySet Name="tbl_DCSA2301_mark2" EntityType="Self.tbl_DCSA2301_mark2" />
+          <EntitySet Name="tbl_DCSA2302_mark2" EntityType="Self.tbl_DCSA2302_mark2" />
+          <EntitySet Name="tbl_DCSA2303_mark2" EntityType="Self.tbl_DCSA2303_mark2" />
+          <EntitySet Name="tbl_DCSA2304_mark2" EntityType="Self.tbl_DCSA2304_mark2" />
+          <EntitySet Name="tbl_DCSA3301_mark3" EntityType="Self.tbl_DCSA3301_mark3" />
+          <EntitySet Name="tbl_DCSA3302_mark3" EntityType="Self.tbl_DCSA3302_mark3" />
+          <EntitySet Name="tbl_DCSA3303_mark3" EntityType="Self.tbl_DCSA3303_mark3" />
+          <EntitySet Name="tbl_DCSA3304_mark3" EntityType="Self.tbl_DCSA3304_mark3" />
+          <EntitySet Name="tbl_student" EntityType="Self.tbl_student" />
+          <EntitySet Name="tbl_users" EntityType="Self.tbl_users" />
+          <AssociationSet Name="FK_tbl_users_tbl_center" Association="Self.FK_tbl_users_tbl_center">
+            <End Role="tbl_center" EntitySet="tbl_center" />
+            <End Role="tbl_users" EntitySet="tbl_users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA1201_mark1_tbl_student" Association="Self.FK_tbl_DCSA1201_mark1_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA1201_mark1" EntitySet="tbl_DCSA1201_mark1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA1302_mark1_tbl_student" Association="Self.FK_tbl_DCSA1302_mark1_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA1302_mark1" EntitySet="tbl_DCSA1302_mark1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA1303_mark1_tbl_student" Association="Self.FK_tbl_DCSA1303_mark1_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA1303_mark1" EntitySet="tbl_DCSA1303_mark1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA1304_mark1_tbl_student" Association="Self.FK_tbl_DCSA1304_mark1_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA1304_mark1" EntitySet="tbl_DCSA1304_mark1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA2301_mark2_tbl_student" Association="Self.FK_tbl_DCSA2301_mark2_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA2301_mark2" EntitySet="tbl_DCSA2301_mark2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA2302_mark2_tbl_student" Association="Self.FK_tbl_DCSA2302_mark2_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA2302_mark2" EntitySet="tbl_DCSA2302_mark2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA2303_mark2_tbl_student" Association="Self.FK_tbl_DCSA2303_mark2_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA2303_mark2" EntitySet="tbl_DCSA2303_mark2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA2304_mark2_tbl_student" Association="Self.FK_tbl_DCSA2304_mark2_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA2304_mark2" EntitySet="tbl_DCSA2304_mark2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA3301_mark3_tbl_student" Association="Self.FK_tbl_DCSA3301_mark3_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA3301_mark3" EntitySet="tbl_DCSA3301_mark3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA3302_mark3_tbl_student" Association="Self.FK_tbl_DCSA3302_mark3_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA3302_mark3" EntitySet="tbl_DCSA3302_mark3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA3303_mark3_tbl_student" Association="Self.FK_tbl_DCSA3303_mark3_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA3303_mark3" EntitySet="tbl_DCSA3303_mark3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DCSA3304_mark3_tbl_student" Association="Self.FK_tbl_DCSA3304_mark3_tbl_student">
+            <End Role="tbl_student" EntitySet="tbl_student" />
+            <End Role="tbl_DCSA3304_mark3" EntitySet="tbl_DCSA3304_mark3" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DcsaModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DcsaModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DcsaModelStoreContainer" CdmEntityContainer="DcsaContext">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DcsaModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_center">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_center">
+              <MappingFragment StoreEntitySet="tbl_center">
+                <ScalarProperty Name="center_id" ColumnName="center_id" />
+                <ScalarProperty Name="center_code" ColumnName="center_code" />
+                <ScalarProperty Name="center_name" ColumnName="center_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DCSA1201_mark1">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_DCSA1201_mark1">
+              <MappingFragment StoreEntitySet="tbl_DCSA1201_mark1">
+                <ScalarProperty Name="exam_term" ColumnName="exam_term" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="subj_code" ColumnName="subj_code" />
+                <ScalarProperty Name="tma1" ColumnName="tma1" />
+                <ScalarProperty Name="tma2" ColumnName="tma2" />
+                <ScalarProperty Name="total_tma" ColumnName="total_tma" />
+                <ScalarProperty Name="experiment" ColumnName="experiment" />
+                <ScalarProperty Name="record_book" ColumnName="record_book" />
+                <ScalarProperty Name="viva" ColumnName="viva" />
+                <ScalarProperty Name="total_practical" ColumnName="total_practical" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+                <ScalarProperty Name="submit_date" ColumnName="submit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DCSA1302_mark1">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_DCSA1302_mark1">
+              <MappingFragment StoreEntitySet="tbl_DCSA1302_mark1">
+                <ScalarProperty Name="exam_term" ColumnName="exam_term" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="subj_code" ColumnName="subj_code" />
+                <ScalarProperty Name="tma1" ColumnName="tma1" />
+                <ScalarProperty Name="tma2" ColumnName="tma2" />
+                <ScalarProperty Name="total_tma" ColumnName="total_tma" />
+                <ScalarProperty Name="experiment" ColumnName="experiment" />
+                <ScalarProperty Name="record_book" ColumnName="record_book" />
+                <ScalarProperty Name="viva" ColumnName="viva" />
+                <ScalarProperty Name="total_practical" ColumnName="total_practical" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+                <ScalarProperty Name="submit_date" ColumnName="submit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DCSA1303_mark1">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_DCSA1303_mark1">
+              <MappingFragment StoreEntitySet="tbl_DCSA1303_mark1">
+                <ScalarProperty Name="exam_term" ColumnName="exam_term" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="subj_code" ColumnName="subj_code" />
+                <ScalarProperty Name="tma1" ColumnName="tma1" />
+                <ScalarProperty Name="tma2" ColumnName="tma2" />
+                <ScalarProperty Name="total_tma" ColumnName="total_tma" />
+                <ScalarProperty Name="experiment" ColumnName="experiment" />
+                <ScalarProperty Name="record_book" ColumnName="record_book" />
+                <ScalarProperty Name="viva" ColumnName="viva" />
+                <ScalarProperty Name="total_practical" ColumnName="total_practical" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+                <ScalarProperty Name="submit_date" ColumnName="submit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DCSA1304_mark1">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_DCSA1304_mark1">
+              <MappingFragment StoreEntitySet="tbl_DCSA1304_mark1">
+                <ScalarProperty Name="exam_term" ColumnName="exam_term" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="subj_code" ColumnName="subj_code" />
+                <ScalarProperty Name="tma1" ColumnName="tma1" />
+                <ScalarProperty Name="tma2" ColumnName="tma2" />
+                <ScalarProperty Name="total_tma" ColumnName="total_tma" />
+                <ScalarProperty Name="experiment" ColumnName="experiment" />
+                <ScalarProperty Name="record_book" ColumnName="record_book" />
+                <ScalarProperty Name="viva" ColumnName="viva" />
+                <ScalarProperty Name="total_practical" ColumnName="total_practical" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+                <ScalarProperty Name="submit_date" ColumnName="submit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DCSA2301_mark2">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_DCSA2301_mark2">
+              <MappingFragment StoreEntitySet="tbl_DCSA2301_mark2">
+                <ScalarProperty Name="exam_term" ColumnName="exam_term" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="subj_code" ColumnName="subj_code" />
+                <ScalarProperty Name="tma1" ColumnName="tma1" />
+                <ScalarProperty Name="tma2" ColumnName="tma2" />
+                <ScalarProperty Name="total_tma" ColumnName="total_tma" />
+                <ScalarProperty Name="experiment" ColumnName="experiment" />
+                <ScalarProperty Name="record_book" ColumnName="record_book" />
+                <ScalarProperty Name="viva" ColumnName="viva" />
+                <ScalarProperty Name="total_practical" ColumnName="total_practical" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+                <ScalarProperty Name="submit_date" ColumnName="submit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DCSA2302_mark2">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_DCSA2302_mark2">
+              <MappingFragment StoreEntitySet="tbl_DCSA2302_mark2">
+                <ScalarProperty Name="exam_term" ColumnName="exam_term" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="subj_code" ColumnName="subj_code" />
+                <ScalarProperty Name="tma1" ColumnName="tma1" />
+                <ScalarProperty Name="tma2" ColumnName="tma2" />
+                <ScalarProperty Name="total_tma" ColumnName="total_tma" />
+                <ScalarProperty Name="experiment" ColumnName="experiment" />
+                <ScalarProperty Name="record_book" ColumnName="record_book" />
+                <ScalarProperty Name="viva" ColumnName="viva" />
+                <ScalarProperty Name="total_practical" ColumnName="total_practical" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+                <ScalarProperty Name="submit_date" ColumnName="submit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DCSA2303_mark2">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_DCSA2303_mark2">
+              <MappingFragment StoreEntitySet="tbl_DCSA2303_mark2">
+                <ScalarProperty Name="exam_term" ColumnName="exam_term" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="subj_code" ColumnName="subj_code" />
+                <ScalarProperty Name="tma1" ColumnName="tma1" />
+                <ScalarProperty Name="tma2" ColumnName="tma2" />
+                <ScalarProperty Name="total_tma" ColumnName="total_tma" />
+                <ScalarProperty Name="experiment" ColumnName="experiment" />
+                <ScalarProperty Name="record_book" ColumnName="record_book" />
+                <ScalarProperty Name="viva" ColumnName="viva" />
+                <ScalarProperty Name="total_practical" ColumnName="total_practical" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+                <ScalarProperty Name="submit_date" ColumnName="submit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DCSA2304_mark2">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_DCSA2304_mark2">
+              <MappingFragment StoreEntitySet="tbl_DCSA2304_mark2">
+                <ScalarProperty Name="exam_term" ColumnName="exam_term" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="subj_code" ColumnName="subj_code" />
+                <ScalarProperty Name="tma1" ColumnName="tma1" />
+                <ScalarProperty Name="tma2" ColumnName="tma2" />
+                <ScalarProperty Name="total_tma" ColumnName="total_tma" />
+                <ScalarProperty Name="experiment" ColumnName="experiment" />
+                <ScalarProperty Name="record_book" ColumnName="record_book" />
+                <ScalarProperty Name="viva" ColumnName="viva" />
+                <ScalarProperty Name="total_practical" ColumnName="total_practical" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+                <ScalarProperty Name="submit_date" ColumnName="submit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DCSA3301_mark3">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_DCSA3301_mark3">
+              <MappingFragment StoreEntitySet="tbl_DCSA3301_mark3">
+                <ScalarProperty Name="exam_term" ColumnName="exam_term" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="subj_code" ColumnName="subj_code" />
+                <ScalarProperty Name="tma1" ColumnName="tma1" />
+                <ScalarProperty Name="tma2" ColumnName="tma2" />
+                <ScalarProperty Name="total_tma" ColumnName="total_tma" />
+                <ScalarProperty Name="experiment" ColumnName="experiment" />
+                <ScalarProperty Name="record_book" ColumnName="record_book" />
+                <ScalarProperty Name="viva" ColumnName="viva" />
+                <ScalarProperty Name="total_practical" ColumnName="total_practical" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+                <ScalarProperty Name="submit_date" ColumnName="submit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DCSA3302_mark3">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_DCSA3302_mark3">
+              <MappingFragment StoreEntitySet="tbl_DCSA3302_mark3">
+                <ScalarProperty Name="exam_term" ColumnName="exam_term" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="subj_code" ColumnName="subj_code" />
+                <ScalarProperty Name="tma1" ColumnName="tma1" />
+                <ScalarProperty Name="tma2" ColumnName="tma2" />
+                <ScalarProperty Name="total_tma" ColumnName="total_tma" />
+                <ScalarProperty Name="experiment" ColumnName="experiment" />
+                <ScalarProperty Name="record_book" ColumnName="record_book" />
+                <ScalarProperty Name="viva" ColumnName="viva" />
+                <ScalarProperty Name="total_practical" ColumnName="total_practical" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+                <ScalarProperty Name="submit_date" ColumnName="submit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DCSA3303_mark3">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_DCSA3303_mark3">
+              <MappingFragment StoreEntitySet="tbl_DCSA3303_mark3">
+                <ScalarProperty Name="exam_term" ColumnName="exam_term" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="subj_code" ColumnName="subj_code" />
+                <ScalarProperty Name="tma1" ColumnName="tma1" />
+                <ScalarProperty Name="tma2" ColumnName="tma2" />
+                <ScalarProperty Name="total_tma" ColumnName="total_tma" />
+                <ScalarProperty Name="experiment" ColumnName="experiment" />
+                <ScalarProperty Name="record_book" ColumnName="record_book" />
+                <ScalarProperty Name="viva" ColumnName="viva" />
+                <ScalarProperty Name="total_practical" ColumnName="total_practical" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+                <ScalarProperty Name="submit_date" ColumnName="submit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DCSA3304_mark3">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_DCSA3304_mark3">
+              <MappingFragment StoreEntitySet="tbl_DCSA3304_mark3">
+                <ScalarProperty Name="exam_term" ColumnName="exam_term" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="subj_code" ColumnName="subj_code" />
+                <ScalarProperty Name="project_report" ColumnName="project_report" />
+                <ScalarProperty Name="viva" ColumnName="viva" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+                <ScalarProperty Name="submit_date" ColumnName="submit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_student">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_student">
+              <MappingFragment StoreEntitySet="tbl_student">
+                <ScalarProperty Name="st_registration" ColumnName="st_registration" />
+                <ScalarProperty Name="st_name" ColumnName="st_name" />
+                <ScalarProperty Name="st_admission_year" ColumnName="st_admission_year" />
+                <ScalarProperty Name="st_semester1" ColumnName="st_semester1" />
+                <ScalarProperty Name="st_semester2" ColumnName="st_semester2" />
+                <ScalarProperty Name="st_semester3" ColumnName="st_semester3" />
+                <ScalarProperty Name="st_center_code" ColumnName="st_center_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_users">
+            <EntityTypeMapping TypeName="DcsaModel.tbl_users">
+              <MappingFragment StoreEntitySet="tbl_users">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+                <ScalarProperty Name="user_role" ColumnName="user_role" />
+                <ScalarProperty Name="user_center_code" ColumnName="user_center_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DcsaModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DcsaModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DcsaModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DcsaModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DcsaModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DcsaModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DcsaModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DcsaModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DcsaModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

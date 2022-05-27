@@ -1,0 +1,64 @@
+﻿@model SstDCSA.Models.tbl_users
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="text-center mt-3">
+    <i class="fas fa-user"></i>
+    Users Details
+</h2>
+
+
+<div style="max-width: 550px; margin: auto;">
+    <h4 class="text-center">Users info</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+
+            @Html.DisplayNameFor(model => model.tbl_center.center_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_center.center_name)
+        </dd>
+        <dt>
+
+            @Html.DisplayNameFor(model => model.tbl_center.center_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_center.center_code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.user_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_role)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_role)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.user_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

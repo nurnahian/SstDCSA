@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2e4c48a7dbe8425da5f87cb2e693b406" Name="Diagram1" ZoomLevel="50">
+        <EntityTypeShape EntityType="DcsaModel.sysdiagram" Width="1.5" PointX="17.875" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_center" Width="1.5" PointX="17.875" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_DCSA1201_mark1" Width="1.5" PointX="23" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_DCSA1302_mark1" Width="1.5" PointX="23" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_DCSA1303_mark1" Width="1.5" PointX="23" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_DCSA1304_mark1" Width="1.5" PointX="23.125" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_DCSA2301_mark2" Width="1.5" PointX="26.5" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_DCSA2302_mark2" Width="1.5" PointX="26.5" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_DCSA2303_mark2" Width="1.5" PointX="26.5" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_DCSA2304_mark2" Width="1.5" PointX="26.5" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_DCSA3301_mark3" Width="1.5" PointX="28.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_DCSA3302_mark3" Width="1.5" PointX="28.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_DCSA3303_mark3" Width="1.5" PointX="28.75" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_DCSA3304_mark3" Width="1.5" PointX="28.75" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_student" Width="1.5" PointX="20.625" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DcsaModel.tbl_users" Width="1.5" PointX="17.875" PointY="31.25" IsExpanded="true" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_users_tbl_center" ManuallyRouted="false" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_DCSA1201_mark1_tbl_student" ManuallyRouted="false" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_DCSA1302_mark1_tbl_student" ManuallyRouted="false" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_DCSA1303_mark1_tbl_student" ManuallyRouted="false" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_DCSA1304_mark1_tbl_student" ManuallyRouted="false" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_DCSA2301_mark2_tbl_student" ManuallyRouted="false" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_DCSA2302_mark2_tbl_student" ManuallyRouted="false" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_DCSA2303_mark2_tbl_student" ManuallyRouted="false" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_DCSA2304_mark2_tbl_student" ManuallyRouted="false" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_DCSA3301_mark3_tbl_student" ManuallyRouted="false" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_DCSA3302_mark3_tbl_student" ManuallyRouted="false" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_DCSA3303_mark3_tbl_student" ManuallyRouted="false" />
+        <AssociationConnector Association="DcsaModel.FK_tbl_DCSA3304_mark3_tbl_student" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

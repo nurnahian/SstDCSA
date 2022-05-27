@@ -1,0 +1,38 @@
+﻿@model SstDCSA.Models.tbl_center
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center mt-3">Study Center Details</h2>
+<div class="row">
+    <div class="form-horizontal bg-transparent border mt-5" style="max-width:750px;margin:auto;">
+        <div>
+            <h4>Study Center</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.center_name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.center_name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.center_code)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.center_code)
+                </dd>
+
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.center_code }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>

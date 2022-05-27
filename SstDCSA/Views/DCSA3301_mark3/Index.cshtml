@@ -1,0 +1,129 @@
+﻿@model IEnumerable<SstDCSA.Models.tbl_DCSA3301_mark3>
+
+@{
+    ViewBag.Title = "Graphics Design";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center mt-3">Graphics Design (DCSA 3301)</h2>
+
+<p>
+    @Html.ActionLink("Add New", "Create", null, new { @class = "btn btn-info btn-outline-dark" })
+</p>
+<hr />
+
+<table class="table table-striped table-responsive table-hover " style="width: 100%; font-size: 14px">
+    <tr>
+        <th>
+            No
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_student.st_registration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_student.st_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subj_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tma1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tma2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_tma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.experiment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.record_book)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.viva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_practical)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_center_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.submit_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.exam_term)
+        </th>
+        <th>
+
+        </th>
+        <th>
+            Action
+        </th>
+        <th>
+
+        </th>
+    </tr>
+    @{ int i = 1; }
+    @foreach (var item in Model)
+
+    {
+        <tr>
+            <td scope="row">
+                @i
+            </td>
+            @{ i++; }
+            <td>
+                @Html.DisplayFor(modelItem => item.tbl_student.st_registration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbl_student.st_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.subj_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tma1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tma2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_tma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.experiment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.record_book)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.viva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_practical)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.st_center_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.submit_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.exam_term)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-outline-warning btn-sm" })
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-outline-secondary btn-sm" })
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-outline-danger btn-sm " })
+            </td>
+        </tr>
+    }
+
+</table>

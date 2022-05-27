@@ -1,0 +1,176 @@
+﻿@using SstDCSA.Models;
+@model IEnumerable<tbl_DCSA2301_mark2>
+@{
+    ViewBag.Title = "DCSA 2301";
+    Layout = "~/Views/Shared/_LayoutCenter.cshtml";
+    WebGrid webGrid = new WebGrid(source: Model, canPage: true, canSort: false);
+}
+
+
+<style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    .Grid {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+
+        .Grid th {
+            background-color: #F7F7F7;
+            font-weight: bold;
+        }
+
+        .Grid th, .Grid td {
+            padding: 5px;
+            width: 150px;
+            border: 1px solid #ccc;
+        }
+
+        .Grid, .Grid table td {
+            border: 0px solid #ccc;
+        }
+
+            .Grid th a, .Grid th a:visited {
+                color: #333;
+            }
+</style>
+
+<h2 class="text-center mt-3">DCSA 2301 Mark Input</h2>
+
+<hr />
+<div class="mt-1">
+
+    @webGrid.GetHtml(
+        htmlAttributes: new { @id = "WebGrid", @class = "Grid" },
+        columns: webGrid.Columns(
+                 webGrid.Column(header: "Student ID", format: @<span class="label">@item.st_registration</span>, style: "st_registration"),
+
+webGrid.Column(header: "Name", format: @<span class="label">@item.tbl_student.st_name</span>, style: "tbl_student.st_name"),
+webGrid.Column(header: "Subject Code", format: @<span class="label">@item.subj_code</span>, style: "subj_code"),
+
+webGrid.Column(header: "TMA 1", format: @<span>
+            <span class="label">@item.tma1</span>
+            <input class="text" type="text" value="@item.tma1" style="display:none" size="2" /> /5
+        </span>, style: "tma1"),
+
+webGrid.Column(header: "TMA 2", format: @<span>
+                    <span class="label">@item.tma2</span>
+                    <input class="text" type="text" value="@item.tma2" style="display:none" size="2" /> /5
+                </span>, style: "tma2"),
+
+
+webGrid.Column(header: "Total TMA", format: @<span class="label">@item.total_tma <span> /10</span></span>, style: "total_tma"),
+
+webGrid.Column(header: "Experiment Mark", format: @<span>
+            <span class="label">@item.experiment</span>
+            <input class="text" type="text" value="@item.experiment" style="display:none" size="2" /> /10
+        </span>, style: "experiment"),
+
+webGrid.Column(header: "Record Book Mark", format: @<span>
+                    <span class="label">@item.record_book</span>
+                    <input class="text" type="text" value="@item.record_book" style="display:none" size="2" /> /5
+                </span>, style: "record_book"),
+
+webGrid.Column(header: "Viva Mark", format: @<span>
+                            <span class="label">@item.viva</span>
+                            <input class="text" type="text" value="@item.viva" style="display:none" size="2" /> /5
+                        </span>, style: "viva"),
+
+webGrid.Column(header: "Total Practical Mark", format: @<span class="label">@item.total_practical<span> /20</span></span>, style: "total_practical"),
+
+
+webGrid.Column(header: "Exam Term", format: @<span>
+            <span class="label">@item.exam_term</span>
+            <input class="text" type="text" value="@item.exam_term" style="display:none" size="2" />
+        </span>, style: "exam_term"),
+
+webGrid.Column(format:@<span class="link">
+                    @if (item.exam_term == null)
+                                {
+                        <a class="Edit btn btn-info badge" href="javascript:;">Edit</a>
+                                }
+                                else
+                                {
+                        <a class="Edit" href="javascript:;" style="display:none">Edit</a>
+                        <a><i class="fas fa-check"></i></a>
+                                }
+                    <a class="Update btn btn-info badge" href="javascript:;" style="display:none">Update</a>
+                    <a class="Cancel btn btn-warning badge" href="javascript:;" style="display:none"><i class="far fa-window-close"></i></a>
+                </span>)))
+
+
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+    <script type="text/javascript">
+        //Edit event handler.
+        $("body").on("click", "#WebGrid TBODY .Edit", function () {
+            var row = $(this).closest("tr");
+            $("td", row).each(function () {
+                if ($(this).find(".text").length > 0) {
+                    $(this).find(".text").show();
+                    $(this).find(".label").hide();
+                }
+            });
+            row.find(".Update").show();
+            row.find(".Cancel").show();
+            $(this).hide();
+        });
+
+        //Update event handler.
+        $("body").on("click", "#WebGrid TBODY .Update", function () {
+            var row = $(this).closest("tr");
+            $("td", row).each(function () {
+                if ($(this).find(".text").length > 0) {
+                    var span = $(this).find(".label");
+                    var input = $(this).find(".text");
+                    span.html(input.val());
+                    span.show();
+                    input.hide();
+                }
+            });
+            row.find(".Edit").show();
+            row.find(".Cancel").hide();
+            $(this).hide();
+
+            var customer = {};
+            customer.st_registration = row.find(".st_registration").find(".label").html();
+            customer.tma1 = row.find(".tma1").find(".label").html();
+            customer.tma2 = row.find(".tma2").find(".label").html();
+            customer.experiment = row.find(".experiment").find(".label").html();
+            customer.record_book = row.find(".record_book").find(".label").html();
+            customer.viva = row.find(".viva").find(".label").html();
+            customer.exam_term = row.find(".exam_term").find(".label").html();
+            $.ajax({
+                type: "POST",
+                url: "/DCSA2301/UpdateCustomer",
+                data: '{customer:' + JSON.stringify(customer) + '}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json"
+            });
+        });
+
+        //Cancel event handler.
+        $("body").on("click", "#WebGrid TBODY .Cancel", function () {
+            var row = $(this).closest("tr");
+            $("td", row).each(function () {
+                if ($(this).find(".text").length > 0) {
+                    var span = $(this).find(".label");
+                    var input = $(this).find(".text");
+                    input.val(span.html());
+                    span.show();
+                    input.hide();
+                }
+            });
+            row.find(".Edit").show();
+            row.find(".Update").hide();
+            $(this).hide();
+        });
+    </script>
+}
+

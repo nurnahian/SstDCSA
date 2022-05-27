@@ -1,0 +1,111 @@
+﻿@model IEnumerable<SstDCSA.Models.tbl_student>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center mt-3">Student</h2>
+
+<h5 class="text-center">Import Student</h5>
+<div class="container">
+    <div class="row">
+        <div class="bg-transparent border mt-2" style="max-width:450px;margin:auto;">
+            <h6 class="bg-danger shadow-1-strong text-center">Be Careful import file formate must be CSV</h6>
+            <div style="margin: auto;">
+                <div class="m-4">
+                    <div class="input-group">
+                        @using (Html.BeginForm("Up", "Students", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <input type="file" name="postedFile" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" class="form-control">
+                            @*<button type="submit" class="btn btn-info btn-outline-dark">Upload</button>*@
+                            <input type="submit" class="btn btn-info btn-outline-dark mt-1" value="Import" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<p>
+    @Html.ActionLink("AddStudent", "Create", null, new { @class = "btn btn-info btn-outline-dark" })
+</p>
+<table class="table table-striped table-hover">
+    <tr>
+        <th>
+            No
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_registration)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.st_semester1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_semester2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_semester3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_center_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_admission_year)
+        </th>
+        <td></td>
+        <td>
+            Action
+        </td>
+        <th></th>
+    </tr>
+    @{ int i = 1; }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @i
+            </td>
+            @{ i++; }
+            <td>
+                @Html.DisplayFor(modelItem => item.st_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.st_registration)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.st_semester1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.st_semester2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.st_semester3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.st_center_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.st_admission_year)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.st_registration }, new { @class = "btn btn-outline-warning" })
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.st_registration }, new { @class = "btn btn-outline-secondary" })
+            </td>
+            <td>                
+                @Html.ActionLink("Delete", "Delete", new { id = item.st_registration }, new { @class = "btn btn-outline-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,127 @@
+﻿@model SstDCSA.Models.tbl_DCSA1201_mark1
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center mt-3">Computer Basics (DCSA 1201) Mark Details</h2>
+
+<div class="row">
+    <div class="form-horizontal bg-transparent border mt-5" style="max-width:750px;margin:auto;">
+        <div>
+            <h4 class="text-center mt-2 my-2">Student Subject Mark</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.tbl_student.st_registration)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tbl_student.st_registration)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.tbl_student.st_name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tbl_student.st_name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.subj_code)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.subj_code)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_center_code)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_center_code)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.tma1)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tma1)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.tma2)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tma2)
+                </dd>
+
+                <dt class="bg-warning">
+                    @Html.DisplayNameFor(model => model.total_tma)
+                </dt>
+
+                <dd class="bg-warning">
+                    @Html.DisplayFor(model => model.total_tma)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.experiment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.experiment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.record_book)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.record_book)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.viva)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.viva)
+                </dd>
+
+                <dt class="bg-info">
+                    @Html.DisplayNameFor(model => model.total_practical)
+                </dt>
+
+                <dd class="bg-info">
+                    @Html.DisplayFor(model => model.total_practical)
+                </dd>
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.submit_date)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.submit_date)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.exam_term)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.exam_term)
+                </dd>
+
+
+            </dl>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
